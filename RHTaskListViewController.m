@@ -84,9 +84,6 @@
         
         addTaskViewController.taskListViewController = self;
         
-        
-        NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-        NSMutableArray *tasks = [defaults objectForKey:@"key1"];
     }
     
     
@@ -95,12 +92,6 @@
         RHEditTaskViewController *editTaskViewController = segue.destinationViewController;
         editTaskViewController.task = [self.tasks objectAtIndex:self.tableView.indexPathForSelectedRow.row];
     }
-    
-    //Internet people
-    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    [defaults setObject:@"key1" forKey:@"tasks"];
-    [defaults synchronize]; // do NOT forget this line!
-    //ending
     
     
 
@@ -169,12 +160,7 @@
     {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
     }
-    //Saving the tasks
-    
-    //[[NSUserDefaults standardUserDefaults] setString:saveTask forKey:@"taskSaved"];
-    
-    
-    //Saving the tasks
+
     
     cell.textLabel.text = currentTask.name;
 
